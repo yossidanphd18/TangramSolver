@@ -13,5 +13,6 @@ abstract: >-
   This repository contains the MATLAB source code, benchmark datasets, 
   and experimental results for the paper: "A Mixed-Integer Optimization 
   Approach for Finite 2D Tiling Problems". It implements an MI-SOCP 
-  framework to solve geometric containment problems using discrete lattice grids.
-license: GPL v3.
+  framework to solve geometric Tangram puzzles by mapping continuous 
+  search spaces to discrete lattice grids.
+license: GPL-3.0
