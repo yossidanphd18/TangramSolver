@@ -1,0 +1,82 @@
+
+Gurobi 12.0.3 (win64, Matlab) logging started Tue Jun 23 20:55:43 2026
+
+Set parameter LicenseID to value 2732244
+Set parameter TimeLimit to value 1800
+Set parameter FeasibilityTol to value 1e-05
+Set parameter IntFeasTol to value 1e-06
+Set parameter OptimalityTol to value 1e-05
+Set parameter Heuristics to value 0.7
+Set parameter MIPFocus to value 1
+Set parameter LogFile to value "C:\Users\User\_REPOS\phd_research3\matlab_sim_v201\Results_scale_1.0\SavedDB_shape50_20260623_205430\gurobi_logfile_20260623_205543.txt"
+Set parameter NonConvex to value 2
+Set parameter PreQLinearize to value 1
+Set parameter PrePasses to value 3
+Set parameter Presolve to value 1
+Set parameter ImproveStartGap to value 0.59
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (win64 - Windows 11+.0 (26200.2))
+
+CPU model: Intel(R) Core(TM) i7-8565U CPU @ 1.80GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  1800
+FeasibilityTol  1e-05
+IntFeasTol  1e-06
+OptimalityTol  1e-05
+Heuristics  0.7
+MIPFocus  1
+LogToConsole  0
+NonConvex  2
+PreQLinearize  1
+PrePasses  3
+Presolve  1
+ImproveStartGap  0.59
+
+Optimize a model with 1747 rows, 9699 columns and 695476 nonzeros
+Model fingerprint: 0x9b2d5482
+Model has 1 quadratic constraint
+Variable types: 1741 continuous, 7958 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [3e-01, 1e+00]
+  QMatrix range    [1e+00, 1e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+07]
+  RHS range        [5e-01, 1e+00]
+Presolve removed 912 rows and 912 columns
+Presolve time: 2.20s
+Presolved: 836 rows, 9599 columns, 689237 nonzeros
+Presolved model has 812 quadratic constraint(s)
+Variable types: 1625 continuous, 7974 integer (7958 binary)
+
+Root relaxation: objective 0.000000e+00, 8 iterations, 0.05 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+H    0     0                      37.0000458    0.00000   100%     -    2s
+*    0     0               0      37.0000458    0.00000   100%     -    2s
+     0     0    0.00000    0   69   37.00005    0.00000   100%     -    3s
+H    0     0                      32.9328206    0.00000   100%     -    3s
+H    0     0                      16.8936879    0.00000   100%     -    4s
+     0     0    0.00000    0   19   16.89369    0.00000   100%     -    7s
+H    0     0                      15.1986862    0.00000   100%     -    8s
+     0     0    0.00000    0   21   15.19869    0.00000   100%     -   10s
+     0     0    0.00000    0   10   15.19869    0.00000   100%     -   21s
+H    0     0                      13.4907413    0.00000   100%     -   23s
+H    0     0                       9.5393942    0.00000   100%     -   28s
+H    0     0                       9.5393928    0.00000   100%     -   29s
+H    0     0                       6.7453690    0.00000   100%     -   30s
+H    0     0                       0.0000000    0.00000  0.00%     -   35s
+     0     0    0.00000    0   10    0.00000    0.00000  0.00%     -   35s
+
+Cutting planes:
+  MIR: 46
+
+Explored 1 nodes (6705 simplex iterations) in 35.66 seconds (29.74 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 9: 0 6.74537 9.53939 ... 37
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%

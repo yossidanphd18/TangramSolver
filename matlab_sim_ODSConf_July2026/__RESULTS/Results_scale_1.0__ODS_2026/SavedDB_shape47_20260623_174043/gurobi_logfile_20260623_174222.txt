@@ -1,0 +1,126 @@
+
+Gurobi 12.0.3 (win64, Matlab) logging started Tue Jun 23 17:42:22 2026
+
+Set parameter LicenseID to value 2732244
+Set parameter TimeLimit to value 1800
+Set parameter FeasibilityTol to value 1e-05
+Set parameter IntFeasTol to value 1e-06
+Set parameter MIPGap to value 0.05
+Set parameter OptimalityTol to value 1e-05
+Set parameter Method to value 1
+Set parameter Heuristics to value 0.1
+Set parameter MIPFocus to value 1
+Set parameter LogFile to value "C:\Users\User\_REPOS\phd_research3\matlab_sim_v201\Results_scale_1.0\SavedDB_shape47_20260623_174043\gurobi_logfile_20260623_174222.txt"
+Set parameter NonConvex to value 2
+Set parameter PreQLinearize to value 1
+Set parameter PrePasses to value 3
+Set parameter Presolve to value 1
+Set parameter ImproveStartGap to value 0.59
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (win64 - Windows 11+.0 (26200.2))
+
+CPU model: Intel(R) Core(TM) i7-8565U CPU @ 1.80GHz, instruction set [SSE2|AVX|AVX2]
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+
+Non-default parameters:
+TimeLimit  1800
+FeasibilityTol  1e-05
+IntFeasTol  1e-06
+MIPGap  0.05
+OptimalityTol  1e-05
+Method  1
+Heuristics  0.1
+MIPFocus  1
+LogToConsole  0
+NonConvex  2
+PreQLinearize  1
+PrePasses  3
+Presolve  1
+ImproveStartGap  0.59
+
+Optimize a model with 1031 rows, 11165 columns and 874727 nonzeros
+Model fingerprint: 0x9e8c04ec
+Model has 1 quadratic constraint
+Variable types: 1025 continuous, 10140 integer (0 binary)
+Coefficient statistics:
+  Matrix range     [3e-01, 1e+00]
+  QMatrix range    [1e+00, 1e+00]
+  Objective range  [1e+00, 1e+00]
+  Bounds range     [1e+00, 1e+07]
+  RHS range        [8e-02, 1e+00]
+Presolve removed 153 rows and 153 columns
+Presolve time: 2.60s
+Presolved: 879 rows, 11869 columns, 867673 nonzeros
+Presolved model has 857 quadratic constraint(s)
+Variable types: 1714 continuous, 10155 integer (10140 binary)
+
+Root relaxation: objective 2.500000e-01, 8 iterations, 0.05 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.25000    0    -          -    0.25000      -     -    3s
+     0     0    0.25000    0   53          -    0.25000      -     -    3s
+     0     0    0.53281    0  113          -    0.53281      -     -    9s
+     0     0    0.62631    0  110          -    0.62631      -     -   11s
+     0     0    0.75027    0   86          -    0.75027      -     -   14s
+     0     0    0.75027    0   86          -    0.75027      -     -   15s
+     0     0    0.86747    0  100          -    0.86747      -     -   17s
+     0     0    1.16844    0   86          -    1.16844      -     -   22s
+     0     0    1.22973    0   93          -    1.22973      -     -   23s
+     0     0    1.27587    0   87          -    1.27587      -     -   26s
+     0     0    1.31351    0   97          -    1.31351      -     -   28s
+     0     0    1.36505    0  107          -    1.36505      -     -   31s
+H    0     0                     167.0979362    1.36507  99.2%     -   47s
+     0     2    1.36507    0  107  167.09794    1.36507  99.2%     -   66s
+     7    12    1.38478    3   95  167.09794    1.37380  99.2%   745   71s
+H   11    18                      16.0583079    1.37380  91.4%   594   73s
+    27    33    1.61121    7   55   16.05831    1.37380  91.4%   531   75s
+H   47    52                       3.3197530    1.37380  58.6%   433   78s
+
+Resetting heuristic parameters to focus on improving solution
+(using Heuristics=0.5 and RINS=10)...
+
+    54    42    1.86170   11   47    3.31975    1.37380  58.6%   407   80s
+    79    56    3.04198   13   19    3.31975    1.37380  58.6%   362   85s
+    94    58    1.76060    4   39    3.31975    1.38539  58.3%   352  105s
+   123    71     cutoff    7         3.31975    1.38539  58.3%   350  111s
+   166    71    3.01719    8   41    3.31975    1.38539  58.3%   306  117s
+   180    75     cutoff   10         3.31975    1.53941  53.6%   321  121s
+   193    85    1.91882    8   56    3.31975    1.53941  53.6%   345  125s
+   207    96    2.51999    9   38    3.31975    1.53941  53.6%   357  130s
+   226   105    2.57005   10   23    3.31975    1.53941  53.6%   360  135s
+   253   108    2.26056   11    8    3.31975    1.53941  53.6%   352  140s
+   291   111    3.04758   22   13    3.31975    1.53941  53.6%   326  145s
+   318   106 infeasible   15         3.31975    1.53941  53.6%   318  151s
+   360   116    1.58356   10  112    3.31975    1.56652  52.8%   307  160s
+   383   125    2.37759   12   83    3.31975    1.56652  52.8%   323  166s
+   393   130    2.40716   13   82    3.31975    1.56652  52.8%   327  170s
+H  401   130                       2.4770970    1.56652  36.8%   323  170s
+   422   125 infeasible   12         2.47710    1.62873  34.2%   335  178s
+   447   127 infeasible    9         2.47710    1.62873  34.2%   344  182s
+   463   128     cutoff   11         2.47710    1.67289  32.5%   350  188s
+H  472   128                       2.3076492    1.70192  26.2%   354  188s
+H  473   128                       2.3076491    1.70192  26.2%   355  188s
+   475   127    1.84489   11   40    2.30765    1.70192  26.2%   357  193s
+   490   120    1.97131   14   23    2.30765    1.70262  26.2%   363  197s
+   517   108     cutoff   14         2.30765    1.70262  26.2%   363  203s
+   542   104     cutoff   19         2.30765    1.81147  21.5%   367  209s
+H  554   105                       2.3076489    1.81147  21.5%   367  209s
+   566    79    2.18651    8    -    2.30765    1.90724  17.4%   364  214s
+   602    76          -    8         2.30765    1.90754  17.3%   354  219s
+H  617    76                       2.1865491    1.90754  12.8%   351  219s
+   628    21 infeasible   15         2.18655    1.94053  11.3%   349  223s
+   689     0    2.14620   28  100    2.18655    1.95937  10.4%   325  225s
+
+Cutting planes:
+  Implied bound: 1
+  MIR: 114
+  Relax-and-lift: 1
+
+Explored 713 nodes (236530 simplex iterations) in 225.79 seconds (254.16 work units)
+Thread count was 8 (of 8 available processors)
+
+Solution count 6: 2.18655 2.30765 2.30765 ... 167.098
+
+Optimal solution found (tolerance 5.00e-02)
+Best objective 2.186549074185e+00, best bound 2.176282047209e+00, gap 0.4696%
