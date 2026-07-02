@@ -18,8 +18,8 @@ function mainTangramApp(use_web_mode)
     
     % execute GA , SA, MISOCP solvers ?
     params.enable_misocp_solver = 1;
-    params.enable_ga_solver = 0;
-    params.enable_sa_solver = 0;
+    params.enable_ga_solver = 1;
+    params.enable_sa_solver = 1;
     
     % force disble extra viz, figures, display
     params.force_disable_viz = 1;
