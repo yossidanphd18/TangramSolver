@@ -139,7 +139,8 @@ classdef PolygonsAppClass < handle
                 rmpath(genpath(targetFolder));
             end
 
-            addpath(genpath('C:/gurobi1203/win64/matlab/'));
+            % addpath(genpath('C:/gurobi1203/win64/matlab/'));
+            addpath(genpath(obj.appData.user_params.gurobi_path));
 
         end
         

@@ -13,10 +13,14 @@ function mainTangramApp(use_web_mode)
     % Force web mode (for sanity test)
     params.use_web_mode = use_web_mode;
 
+    % Path of installed Gurobi for Matlab. Refer to
+    % https://www.gurobi.com/academics for getting a free academic license and installation.
+    params.gurobi_path = 'C:/gurobi1203/win64/matlab/';
+
     % Force N minutes max for all solvers.
     params.time_limit_secs = 30*60;
     
-    % execute GA , SA, MISOCP solvers ?
+    % Execute GA , SA, MISOCP solvers (flags 0/1)?
     params.enable_misocp_solver = 1;
     params.enable_ga_solver = 1;
     params.enable_sa_solver = 1;

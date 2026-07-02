@@ -31,7 +31,7 @@ To run the simulations, ensure your environment meets the following requirements
 ## Results
 The `./__RESULTS` directory contains pre-generated data and figures from our paper. 
 * **Re-generating Results**: You can re-run the analysis scripts by executing `show_results.m` located within the `__RESULTS` folder. 
-* *Note:* Execution times may vary depending on your hardware specifications and potential randomized heuristics.
+* *Note:* Gurobi execution times may vary depending on your hardware specifications and the solver's internal randomized heuristics..
 
 ## Hardware Configuration (Benchmark Environment)
 The results presented in the paper were generated on the following setup:
