@@ -24,6 +24,7 @@ To run the simulations, ensure your environment meets the following requirements
     * `time_limit_secs`: Maximum solver execution time in seconds.
     * `enable_ga_solver`: Toggle (0/1) to disable/enable the Genetic Algorithm.
     * `enable_sa_solver`: Toggle (0/1) to disable/enable Simulated Annealing.
+    * `force_disable_viz`: Set to 1 to disable extra figures and reduce graphical overhead.
 4. **Interface**: Once the GUI opens, select a target shape from the menu and click **"START SOLVER"**. Use the **"NIGHT MODE"** button to trigger a batch solve of all provided challenges.
 
 ---
