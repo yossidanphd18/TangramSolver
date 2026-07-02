@@ -13,7 +13,7 @@ To run the simulations, ensure your environment meets the following requirements
 * **MATLAB**: Version R2023b (Update 1 or later) is recommended.
 * **Optimization Toolbox**: Required for Genetic Algorithm (GA) and Simulated Annealing (SA) components.
 * **Gurobi Optimizer**: Version 12.03. 
-    * *Note:* Academic licenses are available for free via the [Gurobi Academic Program](https://www.gurobi.com/academics).
+    * *Note:* See info on academic licenses at https://www.gurobi.com/academics.
 
 ---
 
