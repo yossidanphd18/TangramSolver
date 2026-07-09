@@ -291,26 +291,19 @@ function [TBasisDictionary, TDisqualifiedDB, GP] = prepareBasisVectorsDict(Probl
 
         intersect_th = 5.0;
 
-        if(1)
-            if(0)
-                % Call the MATLAB function
-                fprintf('Running Matlab function for intersection engine...\n');
-                tic;
+        % Speed-up using Mex function.
+        if(0)
+            % Call the MATLAB function
+            fprintf('Running Matlab function for intersection engine...\n');
+            tic;
 
-                [ForbiddenIndxsList] = getForbiddenIndxs3(TileIDs, BasisVectors, intersect_th);
-            else
-                fprintf('Running optimized C++ MEX intersection engine...\n');
-                tic;
-        
-                % Call the new MEX function        
-                ForbiddenIndxsList = getForbiddenIndxs3_mex_o1(TileIDs, BasisVectors, intersect_th);
-            end
+            [ForbiddenIndxsList] = getForbiddenIndxs3(TileIDs, BasisVectors, intersect_th);
         else
-            % The MEX function accepts the full BasisVectors matrix.
-            % This is significantly faster than calling the function N times.
-            intersect_th = 5.0;
-            % ForbiddenIndxsList = getForbiddenIndxs_mex(BasisVectors, intersect_th);
-            ForbiddenIndxsList = getForbiddenIndxs_mex_o1(BasisVectors, intersect_th);            
+            fprintf('Running optimized C++ MEX for intersection engine...\n');
+            tic;
+    
+            % Call the new MEX function        
+            ForbiddenIndxsList = getForbiddenIndxs3_mex_o1(TileIDs, BasisVectors, intersect_th);
         end
 
         most_true_solution_keep = most_true_solution_idxs;
@@ -342,85 +335,7 @@ function [TBasisDictionary, TDisqualifiedDB, GP] = prepareBasisVectorsDict(Probl
         
         fprintf('C++ Engine completed in %.3f seconds.\n', toc);
 
-        dbg = 1;
     end
-
-    % if(0)
-    %     count_disqualified = 0;
-    %     if(GP.user_params.flag_use_disqualified_db)
-    %         nvars = length(TDisqualifiedDB.var_index);
-    %         txyInfoList = TDisqualifiedDB.TxyInfo;
-    % 
-    %         if(~strcmp(ProblemSpec.challenge_type,'polygons')) 
-    %             error('Need to take care for non-polygonial challenges.');
-    %         end
-    % 
-    %         fprintf('Preparing coordinate vectors for C++ MEX execution...\n');
-    %         tic;
-    %         for n = 1:nvars
-    %             self_TxyInfo = txyInfoList{n}.tileInfo;
-    %             self_idx = n;
-    %             intersect_th = 5.0;
-    %             [forbidden_indxs] = getForbiddenIndxs2(ProblemSpec.challenge_type, self_TxyInfo, self_idx, txyInfoList, BasisVectors, intersect_th);    
-    %             TDisqualifiedDB.forbidden_indxs{n} = forbidden_indxs;
-    %             count_disqualified = count_disqualified + length(forbidden_indxs);
-    %             % For debug
-    %             if(ismember(n, most_true_solution_idxs))
-    %                 check1 = intersect(most_true_solution_idxs, forbidden_indxs);
-    %                 if(length(check1) > 0)
-    %                     error('Unexpected Forbidden Indexes - Solver will Fail!!!');
-    %                 end
-    %             end                        
-    %         end
-    %         TDisqualifiedDB.count_disqualified = count_disqualified;
-    %     else
-    %         TDisqualifiedDB.forbidden_indxs = {};
-    %     end
-    % end
-    % 
-    % if(0)
-    %     count_disqualified = 0;
-    %     if(GP.user_params.flag_use_disqualified_db)
-    %         nvars = length(TDisqualifiedDB.var_index);
-    %         txyInfoList = TDisqualifiedDB.TxyInfo;
-    % 
-    %         if(~strcmp(ProblemSpec.challenge_type,'polygons')) 
-    %             error('Need to take care for non-polygonial challenges.');
-    %         end
-    % 
-    %         fprintf('Preparing coordinate vectors for C++ MEX execution...\n');
-    %         tic;
-    % 
-    %         all_shape_ids = zeros(nvars, 1);
-    %         global_vertices_list = cell(nvars, 1);
-    %         for n = 1:nvars
-    %             all_shape_ids(n) = txyInfoList{n}.tileInfo.tile_id;
-    %             global_vertices_list{n} = txyInfoList{n}.tileInfo.vertices + txyInfoList{n}.t_xy;
-    %         end
-    % 
-    %         fprintf('Running optimized C++ MEX (single-sided) intersection engine...\n');
-    %         [forbidden_cells, count_disqualified] = get_forbidden_mex(all_shape_ids, global_vertices_list);
-    %         fprintf('C++ Engine completed analysis in %.3f seconds.\n', toc);
-    % 
-    %         % Run your verification integrity check
-    %         fprintf('Verifying solution logic constraints... ');
-    %         for n = 1:nvars
-    %             forbidden_indxs = forbidden_cells{n};
-    %             if(ismember(n, most_true_solution_idxs))
-    %                 check1 = intersect(most_true_solution_idxs, forbidden_indxs);
-    %                 if(~isempty(check1))
-    %                     error('Unexpected Forbidden Indexes - Solver will Fail!!!');
-    %                 end
-    %             end        
-    %         end
-    %         fprintf('Pass.\n');
-    % 
-    %         TDisqualifiedDB.forbidden_indxs = forbidden_cells;
-    %         TDisqualifiedDB.count_disqualified = count_disqualified;
-    %     else
-    %         TDisqualifiedDB.forbidden_indxs = {};
-    %     end
-    % end
 
     % Prepare the Goal vector
     [goalVector, ~, ~] = reshapeTo1D(ProblemSpec.Goal.puzzle(r1:r2, c1:c2));

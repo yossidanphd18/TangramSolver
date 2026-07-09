@@ -29,7 +29,7 @@ To run the simulations, ensure your environment meets the following requirements
 ---
 
 ## Results
-The `./__RESULTS` directory contains pre-generated data and figures from our paper. 
+The `./__RESULTS` directory contains the results and generated figures used for our paper. 
 * **Re-generating Results**: You can re-run the analysis scripts by executing `show_results.m` located within the `__RESULTS` folder. 
 * *Note:* Gurobi execution times may vary depending on your hardware specifications and the solver's internal randomized heuristics..
 
