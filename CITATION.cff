@@ -8,7 +8,7 @@ authors:
   - family-names: "Kugler"
     given-names: "Hillel"
 date-released: 2026-07-02
-url: "https://github.com/[YOUR_GITHUB_USERNAME]/[YOUR_REPO_NAME]"
+url: "https://github.com/yossidanphd18/TangramSolver"
 abstract: >-
   This repository contains the MATLAB source code, benchmark datasets, 
   and experimental results for the paper: "A Mixed-Integer Optimization 
