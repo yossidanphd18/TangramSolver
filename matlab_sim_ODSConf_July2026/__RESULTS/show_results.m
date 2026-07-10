@@ -9,7 +9,7 @@ addpath(genpath('../GuiApp'));
 addpath(genpath('../Perf'));
 
 
-ERR_NORM_THRESHOLD_GA_SA = 7.0;% Success threshold criteria for GA/SA.
+ERR_NORM_THRESHOLD_GA_SA = 4.7;% Success threshold criteria for GA/SA.
 ERR_NORM_THRESHOLD_MISOCP = 7.0;% Success threshold criteria for MISOCP.
 
 MAX_TIME_MINS = 30;      % Max time given to all algorithms
