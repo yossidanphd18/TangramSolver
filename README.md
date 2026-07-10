@@ -28,6 +28,10 @@ To run the simulations, ensure your environment meets the following requirements
 4. **Interface**: Once the GUI opens, select a target shape from the menu and click **"START SOLVER"**. Use the **"NIGHT MODE"** button to trigger a batch solve of all provided challenges.
 
 ---
+## Requirements
+This project requires specific MATLAB toolboxes and Gurobi solver. Please see the requirements.txt file in the root directory for a complete list of dependencies.
+
+---
 
 ## Results
 The `./__RESULTS` directory contains the results and generated figures used for our paper. 
