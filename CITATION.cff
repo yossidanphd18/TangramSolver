@@ -15,4 +15,4 @@ abstract: >-
   Approach for Finite 2D Tiling Problems". It implements an MI-SOCP 
   framework to solve geometric Tangram puzzles by mapping continuous 
   search spaces to discrete lattice grids.
-license: GPL-3.0
+license: AGPL-3.0

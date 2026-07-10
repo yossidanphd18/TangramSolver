@@ -44,5 +44,11 @@ The results presented in the paper were generated on the following setup:
 
 ---
 
+## License
+This project is licensed under the GNU Affero General Public License v3.0. 
+See the [LICENSE](LICENSE) file for details.
+
+---
+
 ## Contact
 For questions regarding the implementation or research, please reach out to **Yossi Daniel** at [yossidaniel8@gmail.com](mailto:yossidaniel8@gmail.com).
