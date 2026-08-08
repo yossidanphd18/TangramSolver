@@ -1,9 +1,9 @@
 # A Mixed-Integer Optimization Approach for Finite 2D Tiling Problems
 
-This repository contains the MATLAB source code, benchmark datasets, and experimental results for the paper: **"A Mixed-Integer Optimization Approach for Finite 2D Tiling Problems"** by Yossi Daniel and Hillel Kugler.
+This repository contains the MATLAB source code, benchmark datasets, and experimental results for the paper: **"A Mixed-Integer Optimization Approach for Tangram Puzzles"** by Yossi Daniel and Hillel Kugler.
 
 ## Abstract
-Finite 2D tiling problems represent challenging optimization tasks due to the combinatorial explosion of valid tile arrangements. We introduce a Mixed-Integer Second-Order Cone Programming (MI-SOCP) framework to model and solve these geometric containment problems. By mapping the continuous search space to a discrete lattice grid, permissible tile configurations are represented as bounded discrete states. To ensure computational tractability over large variable spaces, the framework employs an efficient geometric preprocessing pipeline to prune symmetric, redundant, and overlapping topological states prior to optimization. Computational experiments on benchmark Tangram puzzles demonstrate that this integrated approach efficiently traverses the discretized space, yielding optimal solutions with a high success rate.
+Two-dimensional (2D) polygonal tiling presents challenging optimization tasks due to the combinatorial explosion of valid arrangements. We introduce a mixed-integer second-order cone programming (MI-SOCP) framework that maps the continuous search space to a discrete lattice grid, producing initial approximate solutions with grid-restricted translations. A final fine-tuning optimization (FTO) stage then refines these discrete translations into continuous coordinates. To ensure computational tractability over large variable spaces, an efficient geometric preprocessing pipeline prunes symmetric and redundant topological states prior to optimization. Experiments on benchmark Tangram puzzles demonstrate that this approach efficiently yields high-quality approximate solutions, which are subsequently refined into continuous-coordinate configurations that satisfy a strict numerical geometric criterion.
 
 ---
 
@@ -12,6 +12,8 @@ To run the simulations, ensure your environment meets the following requirements
 
 * **MATLAB**: Version R2023b (Update 1 or later) is recommended.
 * **Optimization Toolbox**: Required for Genetic Algorithm (GA) and Simulated Annealing (SA) components.
+* **Global Optimization Toolbox**: Required for global optimization routines.
+* **Image Processing Toolbox**: Required for image handling and visualization features.
 * **Gurobi Optimizer**: Version 12.03. 
     * *Note:* See info on academic licenses at https://www.gurobi.com/academics.
 
@@ -28,15 +30,17 @@ To run the simulations, ensure your environment meets the following requirements
 4. **Interface**: Once the GUI opens, select a target shape from the menu and click **"START SOLVER"**. Use the **"NIGHT MODE"** button to trigger a batch solve of all provided challenges.
 
 ---
+
 ## Requirements
-This project requires specific MATLAB toolboxes and Gurobi solver. Please see the requirements.txt file in the root directory for a complete list of dependencies.
+This project requires specific MATLAB toolboxes, third-party solvers, and external libraries (such as the Clipper2 C++ library used in MEX-compiled functions). Please see the `requirements.txt` file in the root directory for a complete list of dependencies.
 
 ---
 
 ## Results
-The `./__RESULTS` directory contains the results and generated figures used for our paper. 
-* **Re-generating Results**: You can re-run the analysis scripts by executing `show_results.m` located within the `__RESULTS` folder. 
-* *Note:* Gurobi execution times may vary depending on your hardware specifications and the solver's internal randomized heuristics..
+The `./__RESULTS_ODS2026` directory contains the results and generated figures used for our paper. 
+* *Note:* Gurobi execution times may vary depending on your hardware specifications and the solver's internal randomized heuristics.
+
+---
 
 ## Hardware Configuration (Benchmark Environment)
 The results presented in the paper were generated on the following setup:

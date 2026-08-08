@@ -1,4 +1,4 @@
-# Project: A Mixed-Integer Optimization Approach for Finite 2D Tiling Problems
+# Project: A Mixed-Integer Optimization Approach for Tangram Puzzles.
 # ---------------------------------------------------------------------------
 
 # MATLAB Version
@@ -13,3 +13,7 @@ Image Processing Toolbox
 Gurobi Optimizer Version 12.03
 
 # Gurobi License Information: https://www.gurobi.com/academics
+
+# Additional Dependencies & Libraries
+# - Certain processing functions are MEX-compiled and utilize the Clipper2 polygon processing C++ library:
+#   https://github.com/AngusJohnson/Clipper2
