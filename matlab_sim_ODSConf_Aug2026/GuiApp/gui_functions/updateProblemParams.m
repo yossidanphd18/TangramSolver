@@ -32,7 +32,6 @@ function appData = updateProblemParams(appData)
     appData.GridYRange = [GRID_Y_MIN, GRID_Y_MAX];
     % appData.CombinedAreas = zeros(GRID_HEIGHT, GRID_WIDTH);
 
-    % appData.challenge_db_save_path = ['./Challenges_scale_',num2str(scale_gain,'%.1f'),'/polygons/'];
     appData.challenge_db_save_path = appData.user_params.challenges_path;
 
     [appData] = handleHeuristicIntensity(appData);

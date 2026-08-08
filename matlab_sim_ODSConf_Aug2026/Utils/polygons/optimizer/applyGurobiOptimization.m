@@ -8,7 +8,6 @@ function [ResPack, GP] = applyGurobiOptimization(GP, TImages, TBasisDictionary, 
     
     assert(GP.flag_use_integer_ai == 1,'flag_use_integer_ai : must be enabled!');
     assert(GP.apply_dim_reduction == 0,'apply_dim_reduction : dont enable, negatove impact on solver!');
-    % assert(GP.user_params.flag_use_disqualified_db == 0,'flag_use_disqualified_db : need to investigate before using!');
     
 	fprintf("*****************************************************************************************************\n");
     fprintf(['------****** Started Optimization Part ', num2str(GP.flag_which_part), ' (for rotations + translations) ******------\n']);

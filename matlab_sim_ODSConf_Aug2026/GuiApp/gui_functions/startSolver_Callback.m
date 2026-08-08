@@ -32,7 +32,7 @@ function appData = startSolver_Callback(src, ~, appData)
             
 
 		% If we want second pass.
-		if(0)
+		if(0) % NOT USED AT THE MOMENT.
 			appData.user_params.scale_gain = 1.0;
 			save_db = 1;
 			apply_feasibility_check = 1;
@@ -44,7 +44,7 @@ function appData = startSolver_Callback(src, ~, appData)
 			drawnow; 
 			
 			appData.run_params.SOLVER_RESULT = ResPack1.SOLVER_RESULT;
-			[appData.run_params, ResPack2] = tangramProcessing(appData.run_params);
+			[appData.run_params, ResPack2] = tangramProcessing_xN(appData.run_params);
 		end
 
 		if appData.stopRequested

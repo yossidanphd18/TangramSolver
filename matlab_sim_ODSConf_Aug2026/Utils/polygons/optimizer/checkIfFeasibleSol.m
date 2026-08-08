@@ -51,7 +51,6 @@ clear r1 r2 c1 c2
 % Nc = GP.Nc;
 % Nr2 = GP.Nr_wo_pad;
 
-
 %====================================================================
 % feasibility check using basis-vectors dictionary approach
 %====================================================================    

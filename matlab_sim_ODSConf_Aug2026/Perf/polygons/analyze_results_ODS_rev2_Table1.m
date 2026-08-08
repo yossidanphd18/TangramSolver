@@ -906,7 +906,6 @@ function [challengeData] = loadTrueResults(challengesPath, challenge_name)
     end
 end
 
-%==================
 function [polyshapesP_f] = applyTxyFineTuning(polyshapesP_a, polyshapeG, maxTranslationNorm, maxTimeSeconds, solverType, weights, ...
     flagTryVertexMatchFirst)
     if nargin < 3 || isempty(maxTranslationNorm)

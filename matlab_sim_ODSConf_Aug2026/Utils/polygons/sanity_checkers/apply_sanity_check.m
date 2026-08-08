@@ -1,5 +1,4 @@
 function apply_sanity_check(checker_type, Challenges, TilesInfo, FlipsRotsTiles)
-    % sanity check :
 
     if(strcmp(checker_type, 'FeasibleSolutionExists'))
         acc1 = zeros(Challenges.Grids{1}.grid_dims);

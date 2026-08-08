@@ -2,9 +2,8 @@ function expectation = custom_discrete_mutation(parents, options, nvars, Fitness
     % Custom mutation to ensure indices stay within group-specific ranges
     % parents: Indices of parents chosen for mutation
     % group_sizes: The array [N1, N2, ... Nt]
-    
-    %mutationRate = 0.1; % Probability of a gene mutating
-    mutationRate = m_prob;
+
+    mutationRate = m_prob; % Probability of a gene mutating
     expectation = thisPopulation(parents, :); % Start with parent copies
     
     for i = 1:length(parents)

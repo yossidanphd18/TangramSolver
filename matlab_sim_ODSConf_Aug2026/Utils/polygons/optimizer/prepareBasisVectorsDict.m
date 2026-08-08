@@ -156,8 +156,6 @@ function [TBasisDictionary, TDisqualifiedDB, GP] = prepareBasisVectorsDict(Probl
 
         tic;
         
-        % [ForbiddenIndxsList] = getForbiddenIndxs3(TileIDs, BasisVectors, intersect_th);            
-        
         [ForbiddenIndxsList, ForbiddenAreasList] = getForbiddenIndxs4(TileIDs, BasisPolygons, areaMinPercentage);
 
         TDisqualifiedDB.forbidden_indxs = ForbiddenIndxsList;

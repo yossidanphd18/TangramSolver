@@ -16,9 +16,9 @@ function [GP] = setGlobalParams(ProblemSpec, run_params)
     GP.grid_scale = ProblemSpec.Grid.scale; % 1 unit in continueos = K pixels.
     
     if(strcmp(ProblemSpec.challenge_type,'polygons'))
-        GP.pixel_values = 1*ones(1,300); % takes ~3 mins to solve the kangorro 
+        GP.pixel_values = 1*ones(1,300);
     else
-        GP.pixel_values = 231*ones(1,300); % takes ~3 mins to solve the kangorro 
+        GP.pixel_values = 231*ones(1,300);
     end
 
 end
