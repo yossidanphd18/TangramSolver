@@ -518,9 +518,10 @@ area_overlap_misocp = area_overlap_misocp(validIdx);
 
 symbolMap = {'Fail', 'Success'}; 
 
+% Table with proper numerical formatting
 numFormat = '05.2e'; 
 formatTimeDiffSuccess = @(time, aC, aUC, aOL, aOS, succ, fmt) arrayfun(@(t, ac, auc, aol, aos, s) ...
-    sprintf(['%05.2f [mins], %', fmt, ' [aC], %', fmt, ' [aUC], %', fmt, ' [aOL], %', fmt, ' [aOS], [%-7s]'], t, ac, auc, aol, aos, symbolMap{int32(s) + 1}), ...
+    sprintf(['%05.2f [mins], %', fmt, ' [CA], %', fmt, ' [UCA], %', fmt, ' [OLA], %', fmt, ' [OSA], [%-7s]'], t, ac, auc, aol, aos, symbolMap{int32(s) + 1}), ...
     time, aC, aUC,  aOL, aOS, succ, 'UniformOutput', false);
 
 SolverGA = string(formatTimeDiffSuccess(solver_time_ga, area_covered_ga, area_uncovered_ga, area_overlap_ga, area_outside_ga, success_ga, numFormat));
