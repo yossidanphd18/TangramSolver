@@ -56,8 +56,8 @@ if ~exist(saveFiguresFolder, 'dir')
     mkdir(saveFiguresFolder);
 end
 
-table_txt_filename = 'ODS_Rev2_Table2.txt';
-table_mat_filename = 'ODS_Rev2_Table2.mat';
+table_txt_filename = 'ODS_Rev2_Table2_gasa_runtime_corrected.txt';
+table_mat_filename = 'ODS_Rev2_Table2_gasa_runtime_corrected.mat';
 
 % path for saving the summary table
 saveTableAsTxtPath = fullfile(analysisPath, table_txt_filename);
@@ -66,6 +66,9 @@ saveTableAsMatPath = fullfile(analysisPath, table_mat_filename);
 %-----------------------------------------------------
 % Flags
 %-----------------------------------------------------
+% The maximum time budget provided to all solvers.
+MAX_TIME_BUDGET_MINUTES = 30;
+
 PLOTS_ENABLED = 0;
 APPLY_FEATURES_ANALYSIS = 0;
 
@@ -450,6 +453,16 @@ for i = 1:nresults
     for tii = ti:ti+NROUNDS-1
         success_sa(tii) = (area_covered_sa(tii) >= THRESH_CA) && (area_uncovered_sa(tii) < THRESH_OTHER) ...
             && (area_outside_sa(tii) < THRESH_OTHER) && (area_overlap_sa(tii) < THRESH_OTHER) ; 
+    end
+
+    % Correct reuntime report for failed instances of GA and SA.
+    for tii = ti:ti+NROUNDS-1
+        if(success_ga(tii) == false)
+            solver_time_ga(tii) = MAX_TIME_BUDGET_MINUTES;
+        end
+        if(success_sa(tii) == false)
+            solver_time_sa(tii) = MAX_TIME_BUDGET_MINUTES;
+        end    
     end
 
     if(SHOW_FINE_TUNING_FIGURES || (SHOW_FINE_TUNING_FIGURES && (~SHOW_PRE_FINE_TUNING_TABLE)))
