@@ -21,7 +21,7 @@ function appData = solveAll_Callback(src, ~, appData)
 		shapes = shapes(appData.user_params.list_sleceted_index);
 	end
 
-	force_selected_shapes = 1;
+	force_selected_shapes = 0;
 	if(force_selected_shapes)
         % shapes = {'shape56'};
         

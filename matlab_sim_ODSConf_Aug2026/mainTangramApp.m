@@ -44,11 +44,10 @@ function mainTangramApp(use_web_mode)
     params.challenges_path = ['./Challenges_scale_',num2str(params.scale_gain,'%.1f'),'/polygons/'];
 
     % Force N minutes max for all solvers.
-    % params.time_limit_secs = 30*60;
-    params.time_limit_secs = 2*30*60;
+    params.time_limit_secs = 30*60;
     
     % Execute GA , SA, MISOCP solvers (flags 0/1)?
-    params.enable_misocp_solver = 0;
+    params.enable_misocp_solver = 1;
     params.enable_ga_solver = 1;
     params.enable_sa_solver = 1;
    
