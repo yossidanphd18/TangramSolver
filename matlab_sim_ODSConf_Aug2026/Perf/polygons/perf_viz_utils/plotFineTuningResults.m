@@ -1,12 +1,15 @@
-function plotFineTuningResults(figData)
+function plotFineTuningResults(figData, solvers)
+
+if(nargin < 2)
+    % Define the solvers you want to loop over
+    solvers = {'MISOCP', 'GA', 'SA'};
+end
 
     challenge_name = figData.challenge_name;
     saveFiguresFolder = figData.saveFiguresFolder;
     nrounds = figData.nrounds;
     i = figData.i;
 
-    % Define the solvers you want to loop over
-    solvers = {'MISOCP', 'GA', 'SA'};
     
     for s = 1:length(solvers)
         solverType = solvers{s};
