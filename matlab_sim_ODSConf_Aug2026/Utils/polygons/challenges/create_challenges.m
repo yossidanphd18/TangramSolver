@@ -5,7 +5,6 @@ function [Challenges, TilesInfo, FlipsRotsTiles] = create_challenges(run_params)
     FlipsRotsTiles = [];
     
     save_folder_path = fullfile(pwd(),['Challenges_scale_', num2str(run_params.user_params.scale_gain,'%.1f')],'/polygons/',[run_params.puzzle_id, '_data.mat']);
-    % save_folder_path = fullfile(pwd(),'Challenges','polygons',[run_params.puzzle_id, '_data.mat']);
 
     if(strcmp(run_params.challenge_type,'polygons'))
         ChallengeModel = load(save_folder_path);

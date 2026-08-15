@@ -47,6 +47,7 @@ function [gurobi_params, GP] = handleSelectedPuzzles(gurobi_params, GP)
         gurobi_params.ImproveStartGap = 0.59;
     end
 
+	% Try different params with this puzzle.
     % if(strcmp(GP.puzzle_id,'shape35'))
     %     gurobi_params.Heuristics = 0.4;
     %     % gurobi_params.Method = 2;

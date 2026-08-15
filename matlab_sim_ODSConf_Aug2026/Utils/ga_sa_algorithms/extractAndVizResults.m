@@ -1,7 +1,6 @@
 function [acc_vec] = extractAndVizResults(best_indices, D_groups, image_dims)
     vecDim = prod(image_dims);
     acc_vec = zeros(vecDim,1);
-    % image_dims = [26, 72];
     Nr = image_dims(2); 
     Nc = image_dims(1);
     %figure(10); hold on;

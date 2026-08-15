@@ -11,7 +11,6 @@ function [Challenges] = create_challenges_poly(ChallengeModel)
     goals{pw} = ChallengeModel.Goal;
     pw = pw + 1;
         
-    %=============================
     N = length(names);
     names = reshape(names,N,[]);
     grids = reshape(grids,N,[]);

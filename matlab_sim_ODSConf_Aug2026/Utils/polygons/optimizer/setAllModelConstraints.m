@@ -33,7 +33,6 @@ function [gurobi_model] = setAllModelConstraints(gurobi_model, model_blx, model_
         % 
         % % 5. Call Gurobi
         % results = gurobi(model, params);
-
     end
 
     gurobi_model.A   = sparse(Amatrix);
@@ -159,6 +158,9 @@ function [gurobi_model] = setAllModelConstraints(gurobi_model, model_blx, model_
             gurobi_model.genconstrs = gurobi_model.genconstrs(1:cnt_idx - 1);
 
         else
+			
+			error('Dont use this - seems to be inefficient.');
+
             if(GP.flag_use_integer_ai)
                 genconind_binval = 1;
                 genconind_sense = '<';
@@ -173,12 +175,7 @@ function [gurobi_model] = setAllModelConstraints(gurobi_model, model_blx, model_
             for n = 1:N
                 forbidden_indxs = TDisqualifiedDB.forbidden_indxs{n};
                 assert(any(forbidden_indxs > N) == 0, 'forbidden indxs not in allowed range!');
-                
-                % % reduce number of constraints.
-                % if(mod(n,2) == 0)
-                %     continue;
-                % end
-    
+
 			    % we want to encode : a_k = 1 --> sum(forbiden a_i) <= 0.
 			    % or x[binvar] = binval --> <x,a> sense rhs.
 			    %

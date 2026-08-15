@@ -20,13 +20,7 @@ function [GP] = getSpecificOptParams(GP)
 
     % specificPuzzlesList = {'shape52', 'shape34', 'shape61'};
     % if ismember(GP.puzzle_id, specificPuzzlesList)
-    %     GP.lambda_q = 1e3;
-    %     % GP.MAX_Zi = 5*1e2;
-    %     % GP.MAX_q = 1e4;
-    % end
-
-    % if(strcmp(GP.puzzle_id,'shape35'))
-    %     GP.lambda_q = 1;
+    %     GP.lambda_q = 1.0;
     % end
 
 end
