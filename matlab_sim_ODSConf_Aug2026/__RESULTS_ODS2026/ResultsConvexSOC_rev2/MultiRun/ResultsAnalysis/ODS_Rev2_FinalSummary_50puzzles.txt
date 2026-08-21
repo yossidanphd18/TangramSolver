@@ -1,0 +1,5 @@
+         Solver         Success_All_3_Runs    LessThan_5min    Between_5_10min    Between_10_15min    GreaterThan_15min
+    ________________    __________________    _____________    _______________    ________________    _________________
+    {'SolverGA'    }        "0 / 50"                0                 0                  0                   50        
+    {'SolverSA'    }        "3 / 50"               14                 4                  2                   30        
+    {'SolverMISOCP'}        "50 / 50"              40                 4                  3                    3        
