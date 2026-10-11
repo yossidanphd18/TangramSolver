@@ -52,12 +52,14 @@ classdef PolygonsAppClass < handle
             % Retrieve the list of items from the UI component directly
             if obj.appData.isWeb
                 items = obj.appData.hShapeSelector.Items;
+                items = unique(items, 'stable');
                 idx = find(strcmp(items, obj.appData.puzzle_id));
                 if ~isempty(idx)
                     obj.appData.hShapeSelector.Value = items{idx};
                 end
             else
                 items = get(obj.appData.hShapeSelector, 'String');
+                items = unique(items, 'stable');
                 idx = find(strcmp(items, obj.appData.puzzle_id));
                 if ~isempty(idx)
                     set(obj.appData.hShapeSelector, 'Value', idx);
