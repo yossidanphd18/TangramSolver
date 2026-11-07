@@ -10,10 +10,10 @@ end
     nrounds = figData.nrounds;
     i = figData.i;
 
-    
     for s = 1:length(solvers)
         solverType = solvers{s};
-        
+        seed = figData.MY_SEEDS(s);
+
         fig_num = i * 1000 + s * 100;
         fig = figure(fig_num);
         clf(fig);
@@ -48,14 +48,13 @@ end
             polyG = figData.TCombinedPolygons(iter).combinedPoly_true;
             
             % Plot iteration row (Before & After)
-            showFineTuningRow(t, polyG, pa, pf, solverType, iter, fig);        
+            showFineTuningRow(t, polyG, pa, pf, solverType, seed, fig);
         end
 
         % Save the figure to an image file.
         savePath = fullfile(saveFiguresFolder, sprintf('figPostFTO_%s_%s.png', solverType, challenge_name));
         exportgraphics(fig, savePath, 'BackgroundColor', 'current', 'Resolution', 300);
         fprintf('Saved figure to : %s\n', savePath);
-
-        pause(0.1);
+        pause(1);
     end
 end

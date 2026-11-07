@@ -1,4 +1,4 @@
-function showFineTuningRow(t, polyshapeG, polyshapesP_a, polyshapesP_f, solverType, iter, fig)
+function showFineTuningRow(t, polyshapeG, polyshapesP_a, polyshapesP_f, solverType, seed, fig)
     N = length(polyshapesP_a);
     colors = lines(N);
     
@@ -11,7 +11,7 @@ function showFineTuningRow(t, polyshapeG, polyshapesP_a, polyshapesP_f, solverTy
     for n = 1:N
         plot(ax1, polyshapesP_a{n}, 'FaceColor', colors(n,:), 'FaceAlpha', 0.6, 'EdgeColor', 'k');
     end
-    title(ax1, sprintf('Iter %d: Before', iter), 'Color', 'w', 'FontSize', 10, 'FontWeight', 'bold');
+    title(ax1, sprintf('Seed %d: Before', seed), 'Color', 'w', 'FontSize', 10, 'FontWeight', 'bold');
     axis(ax1, 'equal'); grid(ax1, 'on'); hold(ax1, 'off');
     styleAxes(ax1);
     
@@ -22,7 +22,7 @@ function showFineTuningRow(t, polyshapeG, polyshapesP_a, polyshapesP_f, solverTy
     for n = 1:N
         plot(ax2, polyshapesP_f{n}, 'FaceColor', colors(n,:), 'FaceAlpha', 0.6, 'EdgeColor', 'k');
     end
-    title(ax2, sprintf('Iter %d: After', iter), 'Color', 'w', 'FontSize', 10, 'FontWeight', 'bold');
+    title(ax2, sprintf('Seed %d: After', seed), 'Color', 'w', 'FontSize', 10, 'FontWeight', 'bold');
     axis(ax2, 'equal'); grid(ax2, 'on'); hold(ax2, 'off');
     styleAxes(ax2);
 end
