@@ -32,6 +32,7 @@ end
               'Color', 'w', 'FontSize', 12, 'FontWeight', 'bold');
 
         for iter = 1:nrounds
+            seed = figData.MY_SEEDS(iter);
             % Select data based on current solver
             switch solverType
                 case 'MISOCP'
@@ -48,7 +49,7 @@ end
             polyG = figData.TCombinedPolygons(iter).combinedPoly_true;
             
             % Plot iteration row (Before & After)
-            showFineTuningRow(t, polyG, pa, pf, solverType, seed, fig);
+            showFineTuningRow(t, polyG, pa, pf, solverType, seed, fig);        
         end
 
         % Save the figure to an image file.

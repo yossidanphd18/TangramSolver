@@ -42,7 +42,7 @@ resultsPath_GASA = fullfile(inputsPath, 'Results_scale_1.0_ODS_rev2_MultiRounds_
 resultsPath_MISOCP = resultsPath_GASA;
 
 analysisPath = fullfile(basePath, 'ResultsAnalysis/');
-saveFiguresFolder = fullfile(analysisPath, 'Figures_ODS2026_rev2');
+saveFiguresFolder = fullfile(analysisPath, 'Figures_ODS2026_rev2_20_puzzles');
 
 % do saved folder names have the "_iter_x" suffix ?
 flag_no_iter_str = false;
@@ -477,7 +477,8 @@ for i = 1:nresults
         figData.TCombinedPolygons = TCombinedPolygons;
         figData.i = i;
         figData.nrounds = NROUNDS;
-        
+        figData.MY_SEEDS = MY_SEEDS;
+
         plotFineTuningResults(figData);
     end
 
