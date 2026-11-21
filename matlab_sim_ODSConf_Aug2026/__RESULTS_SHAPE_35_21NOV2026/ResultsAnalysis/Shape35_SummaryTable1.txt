@@ -1,0 +1,8 @@
+    ID      Name        Seed             SpecificInfo                                                  SolverMISOCP                                           NumOptions  
+    __    _________    ______    ____________________________    ________________________________________________________________________________________    _____________
+    1     "shape35"    "1841"    "30 mins budget, MIPGap=0.4"    "27.69 [mins], 7.84e+02 [CA], 4.03e-03 [UCA], 4.03e-03 [OLA], 0.00e+00 [OSA], [Success]"    "1.11395e+21"
+    2     "shape35"    "5440"    "30 mins budget, MIPGap=0.4"    "30.04 [mins], 7.84e+02 [CA], 4.83e-03 [UCA], 4.03e-03 [OLA], 8.01e-04 [OSA], [Success]"    "1.11395e+21"
+    3     "shape35"    "1518"    "30 mins budget, MIPGap=0.4"    "12.11 [mins], 7.84e+02 [CA], 4.03e-03 [UCA], 4.03e-03 [OLA], 0.00e+00 [OSA], [Success]"    "1.11395e+21"
+    4     "shape35"    "1841"    "60 mins budget"                "56.96 [mins], 7.84e+02 [CA], 4.80e-03 [UCA], 4.80e-03 [OLA], 0.00e+00 [OSA], [Success]"    "1.11395e+21"
+    5     "shape35"    "5440"    "60 mins budget"                "60.04 [mins], 7.84e+02 [CA], 4.80e-03 [UCA], 4.80e-03 [OLA], 0.00e+00 [OSA], [Success]"    "1.11395e+21"
+    6     "shape35"    "1518"    "60 mins budget"                "25.40 [mins], 7.84e+02 [CA], 4.80e-03 [UCA], 4.80e-03 [OLA], 0.00e+00 [OSA], [Success]"    "1.11395e+21"
